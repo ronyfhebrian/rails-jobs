@@ -1,7 +1,11 @@
-%h1= @job.title
-%p= @job.description
-%p= @job.company
+#jobs
+  .job
+    %h2= @job.title
+    %p= @job.description
+    %p= @job.company
+    %button.btn.btn-default= link_to "Mendaftar ke pekerjaan", @job.url
 
-= link_to "Beranda", root_path
-= link_to "Edit", edit_job_path(@job)
-= link_to "Hapus", job_path(@job), method: :delete, data: { confirm: "Apakah Kamu yakin?" }
+#links
+  = link_to "Back", root_path, class: "btn btn-sm btn-default"
+  = link_to "Edit", edit_job_path(@job), class: "btn btn-sm btn-default"
+  = link_to "Hapus", job_path(@job), method: :delete, data: { confirm: "Apakah Kamu yakin?" }, class: "btn btn-sm btn-default"
