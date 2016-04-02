@@ -1,4 +1,5 @@
 = simple_form_for @job, html: { class: "form-horizontal" } do |f|
+  = f.collection_select :category_id, Category.all, :id, :name, { prompt: "Pilih Kategori"}
   = f.input :title, label: "Judul Pekerjaan"
   = f.input :description, label: "Deskripsi Pekerjaan"
   = f.input :company, label: "Perusahaan Anda"
